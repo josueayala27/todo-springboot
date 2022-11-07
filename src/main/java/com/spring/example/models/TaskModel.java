@@ -1,3 +1,6 @@
+package com.spring.example.models;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "tasks")
