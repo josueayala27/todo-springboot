@@ -2,15 +2,19 @@ package com.spring.example.models;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "tasks")
 public class TaskModel {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(unique = true, nullable = false)
   private Long id;
   private String task;
-  private String priority;
+
+  @ManyToOne(fetch = FetchType.EAGER)
+  @JoinColumn(name = "priority_id")
+  private PriorityModel priority;
 
   public Long getId() {
     return this.id;
@@ -28,12 +32,11 @@ public class TaskModel {
     this.task = task;
   }
 
-  public String getPriority() {
+  public PriorityModel getPriority() {
     return this.priority;
   }
 
-  public void setPriority(String priority) {
+  public void setPriority(PriorityModel priority) {
     this.priority = priority;
   }
-
 }

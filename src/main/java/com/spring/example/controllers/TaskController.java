@@ -42,7 +42,7 @@ public class TaskController {
     if (status) {
       return "Register has been deleted successfully.";
     } else {
-      return "The task could not be deleted.";
+      return "The record could not be deleted.";
     }
   }
 }
