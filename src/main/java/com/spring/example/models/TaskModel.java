@@ -2,8 +2,6 @@ package com.spring.example.models;
 
 import javax.persistence.*;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity
 @Table(name = "tasks")
 public class TaskModel {
