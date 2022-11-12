@@ -8,7 +8,7 @@ public class TaskModel {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  private String task;
+  private String description;
 
   @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "priority_id")
@@ -22,12 +22,12 @@ public class TaskModel {
     this.id = id;
   }
 
-  public String getTask() {
-    return this.task;
+  public String getDescription() {
+    return this.description;
   }
 
-  public void setTask(String task) {
-    this.task = task;
+  public void setDescription(String description) {
+    this.description = description;
   }
 
   public PriorityModel getPriority() {
