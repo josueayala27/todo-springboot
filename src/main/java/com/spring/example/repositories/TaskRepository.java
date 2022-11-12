@@ -1,5 +1,13 @@
 package com.spring.example.repositories;
 
-public class TaskRepository {
+import java.util.ArrayList;
 
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.spring.example.models.TaskModel;
+
+@Repository
+public interface TaskRepository extends CrudRepository<TaskModel, Long> {
+  // public abstract ArrayList<TaskModel> findById(Integer id);
 }
